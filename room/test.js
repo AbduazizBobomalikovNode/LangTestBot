@@ -6,6 +6,7 @@ const A2 = require('../tests/A2');
 const B1 = require('../tests/A2');
 let clock = false;
 let del = [];
+const SPECIAL_GROUP = process.env.SPECIAL_GROUP;
 
 const scenesTest = new Scenes.BaseScene('scenesTest');
 
@@ -73,12 +74,12 @@ scenesTest.on('text', async ctx => {
                 'ustozingiz sizga testda qatnashingiz uchun so\'rov yubordi.', {
                 parse_mode: 'HTML',
                 ...Markup.inlineKeyboard([
-                    Markup.button.url('Testda qatnashish', await ctx.telegram.exportChatInviteLink('-1001536201756'))
+                    Markup.button.url('Testda qatnashish', await ctx.telegram.exportChatInviteLink(SPECIAL_GROUP))
                 ])
             }).catch(err => {
                 console.error(`scenesTest sahnasida   sendMessageda xatolik : ${err}`)
             });
-            await ctx.telegram.unbanChatSenderChat('-1001536201756', i.id)
+            await ctx.telegram.unbanChatSenderChat(SPECIAL_GROUP, i.id)
             .catch(err => { console.log(`scenesTest sahnasida   unbanChatSenderChatda xatolik : ${err}`) })
 
         }

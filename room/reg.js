@@ -6,9 +6,10 @@ const scenesReg = new Scenes.BaseScene('scenesReg');
 
 let user = [];
 let flag = true;
+const  REMOTE_CHANNEL = process.env.REMOTE_CHANNEL;
 
 function send_chanel(user, ctx) {
-    ctx.telegram.sendMessage(-1001500722420,
+    ctx.telegram.sendMessage(REMOTE_CHANNEL,
         `${user.id}-raqmli xabar.` +
         '\n<b>ILC Talabasi Haqida : </b> ' +
         '\n<b>Talaba :</b> ' + user.name +

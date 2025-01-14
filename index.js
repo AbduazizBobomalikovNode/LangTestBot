@@ -47,7 +47,10 @@ let test = {
     'test5': 'IELTS'
 }
 let bot_API = process.env.BOT_API;
-const admin = JSON.parse(process.env.BOT_ADMINS);
+const BOT_ADMINS = JSON.parse(process.env.BOT_ADMINS);
+const  REMOTE_CHANNEL = process.env.REMOTE_CHANNEL;
+const  CHANNEL_FOR_BOT_ADVERTISING = process.env.CHANNEL_FOR_BOT_ADVERTISING;
+const SPECIAL_GROUP = process.env.SPECIAL_GROUP;
 
 const bot = new Telegraf(bot_API);
 const stage = new Scenes.Stage([scenesReg, scenesAdmin, scenesTest, scenesComment]);
@@ -78,7 +81,7 @@ bot.use((ctx, next) => {
 
 
 bot.start(async (ctx) => {
-    if (admin.includes(ctx.message.from.id)) {
+    if (BOT_ADMINS.includes(ctx.message.from.id)) {
         ctx.scene.enter('scenesAdmin');
     } else if (await ctx.session.db.is_user(ctx.from.id)) {
         ctx.reply(`Assalomu aleykum ${ctx.from.first_name}`
@@ -101,7 +104,7 @@ bot.start(async (ctx) => {
     }
 })
 bot.hears('🆙Test boshlash', async ctx => {
-    if (ctx.chat.id == 5039629006) {
+    if (BOT_ADMINS.includes(ctx.chat.id)) {
         ctx.scene.enter('scenesTest');
     } else {
         ctx.reply('kechirasiz unday huquq mavjut emas!').catch(err => {
@@ -218,7 +221,7 @@ bot.action(['++', '--'], async (ctx) => {
     ]);
 
     let result = await bot.telegram.editMessageText(
-        '-1001500722420',
+        REMOTE_CHANNEL,
         ctx.callbackQuery.message.message_id,
         null,
         data, {
@@ -233,7 +236,7 @@ bot.on('channel_post', async ctx => {
     let { message_id } = ctx.update.channel_post;
     let poll = ctx.update.channel_post.poll
     let { id } = ctx.update.channel_post.sender_chat;
-    if (id == '-1001592690464') {
+    if (id == CHANNEL_FOR_BOT_ADVERTISING) {
         let users = await ctx.session.db.getAllUsers()//'')
         for (i in users) {
             try {

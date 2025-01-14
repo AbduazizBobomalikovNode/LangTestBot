@@ -2,6 +2,9 @@ const {
 	Scenes, Markup
 } = require('telegraf');
 
+const  CHANNEL_FOR_BOT_ADVERTISING = process.env.CHANNEL_FOR_BOT_ADVERTISING;
+
+
 const scenesComment = new Scenes.BaseScene('sceneComment');
 
 
@@ -30,7 +33,7 @@ scenesComment.on('text', async (ctx) => {
 			`<b>Kommentarya vaqti :</b>\n    sana : ${ctx.session.format()}\n    soat : ${ctx.session.format(true)}\n\n` +
 			`<b>Kommentarya :</b>\n` + ctx.message.text;
 
-		ctx.telegram.sendMessage('-1001592690464', content, { parse_mode: 'HTML' })
+		ctx.telegram.sendMessage(CHANNEL_FOR_BOT_ADVERTISING, content, { parse_mode: 'HTML' })
 		.catch(err => {
 			console.error(`scenesComment sahnasida  sendMessageda  xatolik :  ${err}`)
 		});

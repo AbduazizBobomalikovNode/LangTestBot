@@ -9,6 +9,9 @@ let big = {
     trus: [],
     messege: [],
 };
+const  REMOTE_CHANNEL = process.env.REMOTE_CHANNEL;
+const  CHANNEL_FOR_BOT_ADVERTISING = process.env.CHANNEL_FOR_BOT_ADVERTISING;
+const SPECIAL_GROUP = process.env.SPECIAL_GROUP;
 
 async function  get(ctx) {
     let count_quiz = 0;
@@ -16,7 +19,7 @@ async function  get(ctx) {
     ctx.session.big_data.counts = ctx.session.quizs.length;
     let i = 0;
     let poll = await ctx.telegram.sendPoll(
-        '-1001536201756',
+        SPECIAL_GROUP,
         ctx.session.quizs[i][0],
         ctx.session.quizs[i][1],
         ctx.session.quizs[i][2]
@@ -39,7 +42,7 @@ async function  get(ctx) {
             let sum = ctx.session.reset(ctx);
             clearInterval(myInterval);
             for(let i of ctx.session.big_data.messege){
-                ctx.telegram.deleteMessage('-1001536201756',i).catch(err => {
+                ctx.telegram.deleteMessage(SPECIAL_GROUP,i).catch(err => {
                     console.error(`getquiz fuksiyasida deleteMessageda  xatolik :  ${err}`)
                 });
             }
@@ -59,7 +62,7 @@ async function  get(ctx) {
                 }else{
                     gr_result += '\n  👤'+i.name +': 0% ↗️natija'
                 }
-                ctx.telegram.banChatSenderChat('-1001536201756',i.id).catch(err => {
+                ctx.telegram.banChatSenderChat(SPECIAL_GROUP,i.id).catch(err => {
                     console.error(`getquiz fuksiyasida banChatSenderChatda  xatolik :  ${err}`)
                 });
             }
@@ -76,7 +79,7 @@ async function  get(ctx) {
             ctx.session.big_data.trus = [];
         } else {
             poll = await ctx.telegram.sendPoll(
-                '-1001536201756',
+                SPECIAL_GROUP,
                 ctx.session.quizs[i][0],
                 ctx.session.quizs[i][1],
                 ctx.session.quizs[i][2]
