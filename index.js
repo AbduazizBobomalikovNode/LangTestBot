@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 //tutiloars
 const { Telegraf, Markup, session, Scenes } = require('telegraf');
