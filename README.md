@@ -1,122 +1,73 @@
 # LangTestBot
 
-**LangTestBot** – bu yangi foydalanuvchining ingliz tili bilim darajasini aniqlash va natijalarni boshqarish uchun mo‘ljallangan bot. U foydalanuvchilarni test qilish, natijalarni qayta ishlash va ma‘lumotlarni boshqarish jarayonlarini avtomatlashtiradi.
+Ingliz tili bilim darajasini test orqali aniqlaydigan Telegram bot.
+
+Foydalanuvchi botni ochadi, testni yechadi va darajasini darhol biladi. Natija bazaga yoziladi, yangi kelgan odam haqida admin kanaliga xabar boradi.
 
 ---
 
-## Botning asosiy funksiyalari
+## Muammo
 
-1. **Ingliz tilini bilish darajasini baholash**: 
-   - Bot foydalanuvchiga test yuboradi va natijani qaytaradi.
+Til o'quv markaziga kelgan har bir odamni qaysi guruhga qo'yishni bilish kerak. Buning uchun daraja aniqlanadi: test beriladi, tekshiriladi, natija yozib qo'yiladi.
 
-2. **Admin kanaliga ma‘lumot yuborish**: 
-   - Yangi foydalanuvchi haqida ma‘lumot admin kanaliga avtomatik ravishda post qilinadi.
+Bu ish administratorga tushadi va har bir kelgan odam uchun takrorlanadi. Kechqurun yoki dam olish kunida esa umuman hech kim javob bermaydi — ariza ertagacha kutadi.
 
-3. **Foydalanuvchilarni guruhlarga ajratish**: 
-   - Admin foydalanuvchilarni tegishli guruhlarga ajratishi mumkin.
+## Nima qiladi
 
-4. **Test yuborish imkoniyati**: 
-   - Admin foydalanuvchilarga maxsus guruh orqali testlarni yuboradi.
+- **Test o'tkazadi** — savollar bazadan keladi, javoblar yig'iladi
+- **O'zi baholaydi** — natija darhol chiqadi, odam kutmaydi
+- **Natijani saqlaydi** — kim qachon qanday daraja olgani bazada qoladi
+- **Admin kanaliga xabar beradi** — har yangi foydalanuvchi va uning natijasi avtomatik post bo'ladi
+- **Kechayu kunduz ishlaydi** — ariza vaqtidan qat'i nazar qabul qilinadi
 
-5. **Maxsus guruhda test o‘tkazish**: 
-   - Test qatnashchilari maxsus guruhga taklif qilinadi va u yerda test jarayonida ishtirok etadi.
+## Qanday ishlaydi
 
-6. **Natijalarni qayta ishlash**: 
-   - Foydalanuvchilarga shaxsiy natijalar bot orqali yuboriladi.
-   - Asosiy kanalda umumiy natijalar e‘lon qilinadi.
+```
+/start
+   └─► ro'yxatdan o'tish
+         └─► test boshlanadi        (savollar bazadan)
+               └─► javoblar yig'iladi
+                     ├─► daraja hisoblanadi → foydalanuvchiga
+                     └─► natija bazaga + admin kanaliga
+```
 
-7. **Guruhni boshqarish**: 
-   - Test tugagandan so‘ng, barcha foydalanuvchilar maxsus guruhdan avtomatik ravishda chiqarib yuboriladi.
+## O'rnatish
 
----
+```bash
+git clone https://github.com/AbduazizBobomalikovNode/LangTestBot.git
+cd LangTestBot
+npm install
 
-## O‘rnatish
+cp .env.example .env      # qiymatlarni to'ldiring
+npm start
+```
 
-1. Repozitoriyani klonlash:
-   ```bash
-   git clone https://github.com/AbduazizBobomalikovNode/LangTestBot.git
-   cd LangTestBot
-   ```
+Kerak bo'ladi: Node.js 16+ va MongoDB.
 
-2. Kutubxonalarni o‘rnatish:
-   ```bash
-   npm install
-   ```
+## Environment
 
-3. Botni ishga tushirish:
-   ```bash
-   node index.js
-   ```
+| O'zgaruvchi | Nima uchun |
+|---|---|
+| `BOT_API` | [@BotFather](https://t.me/BotFather) bergan token |
+| `DATE_URL` | MongoDB ulanish satri |
+| `BOT_ADMINS` | Adminlar ID si, vergul bilan |
+| `REMOTE_CHANNEL` | Natijalar yuboriladigan kanal |
+| `CHANNEL_FOR_BOT_ADVERTISING` | Reklama kanali |
+| `SPECIAL_GROUP` | Maxsus guruh |
+| `PORT` | Server porti |
+| `YOUR_HOST` | Tashqi manzil (webhook uchun) |
 
----
+## Tuzilma
 
+```
+index.js       bot va server
+room/          suhbat sahnalari
+functions/     yordamchi funksiyalar
+db/            MongoDB ulanishi
+tests/         savollar va baholash
+images/        rasmlar
+```
 
-## 🔐 Muhit o'zgaruvchilari
-  - BOT_TOKEN - sizning  telegram bot  tokeningiz
-  - DATABASE_URL - sizning  MongoDb   cloud dagi tokeningiz
-  - BOT_ADMINS - bot  adminlari quyidagi tartibda  [admin1_id,admin2_id.. ] shu tartib beriladi
-  - REMOTE_CHANNEL - bot  foydalanuvchilarni boshqarish uchun maxsus telegram  kanal ID yoki USERNAME si 
-  - CHANNEL_FOR_BOT_ADVERTISING - foydalanuvchilarga reklamalarni yuborish uchun  kanal  ID yoki USERNAME si.  ushbu kanalga   har qanday post joylasangiz   bot  foydalanuvchilariga  ham boradi.
-  - SPECIAL_GROUP - maxsus   guruh  foydalanuchilarga  test jarayonini o'tqazish uchun guruh  ID yoki USERNAME si 
-   
-## ⚙ Muhit o'zgaruvchilari Muhitga taminlash
-1. Windows muhiti uchun:
-   ```bash
-   set BOT_TOKEN=sizning_telegram_bot_tokeningiz
-   set DATABASE_URL=sizning_MongoDb_cloud_dagi_tokeningiz
-   set BOT_ADMINS=[admin1,admin2,admin3]
-   set REMOTE_CHANNEL=sizning_foydalanuvchilarni_boshqarish_uchun_kerakli_kanal
-   set CHANNEL_FOR_BOT_ADVERTISING=botda_foydalanuvchilarga_reklama_yuborish_uchun_kanal
-   set SPECIAL_GROUP=test_o'tkaziladigan_maxsus_supper_gurppa
-   ```
-2. Linux muhiti uchun:
-   ```bash
-   export BOT_TOKEN="sizning_telegram_bot_tokeningiz"
-   export DATABASE_URL="sizning_MongoDb_cloud_dagi_tokeningiz"
-   export BOT_ADMINS="[admin1,admin2,admin3]"
-   export REMOTE_CHANNEL="sizning_foydalanuvchilarni_boshqarish_uchun_kerakli_kanal"
-   export CHANNEL_FOR_BOT_ADVERTISING="botda_foydalanuvchilarga_reklama_yuborish_uchun_kanal"
-   export SPECIAL_GROUP="test_o'tkaziladigan_maxsus_supper_gurppa"
-   ```
+## Texnologiyalar
 
-## Foydalanish
-
-1. **Admin kanali sozlamalari**:
-   - Admin kanalini sozlang va botni kanalga qo‘shing.
-
-2. **Foydalanuvchilarni qo‘shish va testni boshlash**:
-   - Foydalanuvchilar test jarayonida ishtirok etishi uchun maxsus guruhga taklif qilinadi.
-
-3. **Test natijalari**:
-   - Foydalanuvchilar testni tugatgandan so‘ng, shaxsiy natijalar bot orqali yuboriladi.
-   - Asosiy kanalda umumiy natijalar post qilinadi.
-
-4. **Guruhni boshqarish**:
-   - Test yakunlangach, maxsus guruh avtomatik tozalanadi.
-
----
-
-## Hissa qo‘shish
-
-1. Repozitoriyani fork qiling.
-2. O‘zgarishlarni amalga oshiring va commit qiling:
-   ```bash
-   git commit -m "O‘zgarish tavsifi"
-   ```
-3. Pull request yuboring.
-
----
-
-
-
-## 📧 Bog'lanish
-
-Loyiha haqida savollaringiz bo'lsa, quyidagi manzilga murojaat qiling:
-- **Muallif:** [Abduaziz Bobomalikov](https://github.com/AbduazizBobomalikovNode)
-- **Telegram:** [AbduazizBobomalikov](https://t.me/Bobomalikov_Abduaziz)
-
-
-## Litsenziya
-
-Ushbu loyiha [MIT Litsenziyasi](https://opensource.org/licenses/MIT) ostida tarqatiladi.
-
+Node.js · Telegraf · MongoDB · Express
