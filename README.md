@@ -6,6 +6,8 @@ Foydalanuvchi botni ochadi, testni yechadi va darajasini darhol biladi. Natija b
 
 ---
 
+**Sahifa:** [abduazizbobomalikovnode.github.io/LangTestBot/](https://abduazizbobomalikovnode.github.io/LangTestBot/)
+
 ## Muammo
 
 Til o'quv markaziga kelgan har bir odamni qaysi guruhga qo'yishni bilish kerak. Buning uchun daraja aniqlanadi: test beriladi, tekshiriladi, natija yozib qo'yiladi.
