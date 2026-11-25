@@ -24,6 +24,10 @@ Bu ish administratorga tushadi va har bir kelgan odam uchun takrorlanadi. Kechqu
 
 ## Qanday ishlaydi
 
+<p align="center">
+  <img src="images/how-it-works.svg" alt="LangTestBot qanday ishlaydi" width="100%">
+</p>
+
 ```
 /start
    └─► ro'yxatdan o'tish
