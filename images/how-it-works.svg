@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" role="img" aria-labelledby="ttl" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<title id="ttl">LangTestBot qanday ishlaydi: ro'yxatdan o'tish bazaga va admin kanaliga tushadi, 40 savollik test yechiladi, to'g'ri javoblar soniga qarab daraja chiqadi</title>
+<style>
+.t{fill:#e6edf3;font-size:14px;font-weight:600}
+.s{fill:#8b949e;font-size:11px}
+.n{fill:#58a6ff;font-size:11px;font-weight:700;letter-spacing:1px}
+.c{fill:#c9d1d9;font-size:10.5px}
+.w{fill:#fff;font-size:11px}
+.box{fill:#161b22;stroke:#30363d;stroke-width:1.5}
+.bub{fill:#21262d}
+.wire{stroke:#30363d;stroke-width:2;fill:none;stroke-dasharray:3 6;animation:flow 1s linear infinite}
+.dot{fill:#58a6ff;opacity:0;filter:drop-shadow(0 0 5px #58a6ff)}
+.u1{animation:s4 14s infinite}.b1{animation:s10 14s infinite}.post{animation:s26 14s infinite}
+.u2{animation:s32 14s infinite}.poll{animation:s38 14s infinite}.res{animation:s74 14s infinite}
+.opt{animation:opt 14s infinite}.db{animation:db 14s infinite}.a2{animation:a2 14s infinite}
+.mark{animation:mark 14s infinite}.q1{animation:q1 14s infinite}.q2{animation:q2 14s infinite}
+@keyframes flow{to{stroke-dashoffset:-9}}
+@keyframes s4{0%,4%{opacity:0;transform:translateY(6px)}6%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes s10{0%,10%{opacity:0;transform:translateY(6px)}12%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes s26{0%,26%{opacity:0;transform:translateY(6px)}28%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes s32{0%,32%{opacity:0;transform:translateY(6px)}34%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes s38{0%,38%{opacity:0;transform:translateY(6px)}40%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes s74{0%,74%{opacity:0;transform:translateY(6px)}76%,97%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes opt{0%,46%{fill:#30363d}48%,97%{fill:#238636}100%{fill:#30363d}}
+@keyframes db{0%,17%,24%,100%{fill:#161b22;stroke:#30363d}19%,22%{fill:#12261b;stroke:#3fb950}}
+@keyframes a2{0%,73%{fill:#161b22;stroke:#30363d}76%,97%{fill:#12261b;stroke:#3fb950}100%{fill:#161b22;stroke:#30363d}}
+@keyframes mark{0%,50%{transform:translateX(0)}70%,97%{transform:translateX(434px)}100%{transform:translateX(0)}}
+@keyframes q1{0%,38%{opacity:0}40%,58%{opacity:1}60%,100%{opacity:0}}
+@keyframes q2{0%,60%{opacity:0}62%,97%{opacity:1}100%{opacity:0}}
+</style>
+
+<rect width="1000" height="440" rx="16" fill="#0d1117"/>
+<text x="30" y="38" class="t" font-size="17">LangTestBot qanday ishlaydi</text>
+
+<!-- wires -->
+<path class="wire" d="M290 143H360"/>
+<path class="wire" d="M440 143H560"/>
+<path class="wire" d="M290 317H345"/>
+
+<!-- telegram chat -->
+<rect class="box" x="30" y="56" width="260" height="364" rx="22"/>
+<path d="M30 92H290" stroke="#30363d" stroke-width="1.5"/>
+<circle cx="52" cy="74" r="9" fill="#2aabee"/>
+<path d="M47 74l10-4-3 9-2.5-3z" fill="#fff"/>
+<text class="t" x="68" y="79" font-size="12">LangTestBot</text>
+<g class="u1">
+<rect x="158" y="100" width="114" height="24" rx="12" fill="#1f6feb"/>
+<text class="w" x="215" y="116" text-anchor="middle">Ro'yxatdan o'tish</text>
+</g>
+<g class="b1">
+<rect class="bub" x="40" y="130" width="186" height="26" rx="10"/>
+<text class="c" x="52" y="147">Ism va telefon qabul qilindi</text>
+</g>
+<g class="u2">
+<rect x="138" y="162" width="134" height="24" rx="12" fill="#1f6feb"/>
+<text class="w" x="205" y="178" text-anchor="middle">Darajangizni aniqlang</text>
+</g>
+<g class="poll">
+<rect class="bub" x="40" y="192" width="200" height="114" rx="10"/>
+<text x="52" y="210" fill="#e6edf3" font-size="11" font-weight="600">They _____ from Spain.</text>
+<rect x="48" y="218" width="184" height="20" rx="6" fill="#30363d"/><text class="c" x="58" y="232">is</text>
+<rect class="opt" x="48" y="242" width="184" height="20" rx="6" fill="#30363d"/><text x="58" y="256" fill="#fff" font-size="10.5">are</text>
+<rect x="48" y="266" width="184" height="20" rx="6" fill="#30363d"/><text class="c" x="58" y="280">do</text>
+<text class="s q1" x="52" y="300">savol 2 / 40</text>
+<text class="s q2" x="52" y="300">savol 40 / 40</text>
+</g>
+<g class="res">
+<rect class="bub" x="40" y="312" width="200" height="50" rx="10"/>
+<text class="c" x="52" y="330">Sizning darajangiz · to'g'ri: 28</text>
+<text x="52" y="350" fill="#3fb950" font-size="13" font-weight="700">ELEMENTARY (A2)</text>
+</g>
+<rect x="42" y="382" width="236" height="26" rx="13" fill="#0d1117" stroke="#30363d"/>
+<text class="s" x="56" y="399">Xabar…</text>
+
+<!-- registration: db + channel -->
+<text class="n" x="345" y="84">1 · RO'YXAT</text>
+<path class="box db" d="M360 122v44c0 7 18 12 40 12s40-5 40-12v-44"/>
+<ellipse class="box db" cx="400" cy="122" rx="40" ry="12"/>
+<path d="M360 144c0 7 18 12 40 12s40-5 40-12" fill="none" stroke="#30363d" stroke-width="1.5"/>
+<text class="t" x="360" y="204">MongoDB</text>
+<text class="s" x="360" y="221">ism, telefon, guruh</text>
+
+<rect class="box" x="560" y="66" width="410" height="172" rx="12"/>
+<path d="M560 94H970" stroke="#30363d" stroke-width="1.5"/>
+<text class="t" x="574" y="85" font-size="12">Admin kanali</text>
+<g class="post">
+<rect class="bub" x="572" y="104" width="226" height="122" rx="10"/>
+<text x="584" y="124" fill="#e6edf3" font-size="11" font-weight="700">ILC talabasi haqida</text>
+<text class="c" x="584" y="144">Talaba: ism familiya</text>
+<text class="c" x="584" y="162">Telegrami: @username</text>
+<text class="c" x="584" y="180">Tel: +998 …</text>
+<text class="c" x="584" y="198">Group: 1</text>
+<rect x="816" y="150" width="40" height="24" rx="6" fill="#30363d"/><text x="836" y="167" text-anchor="middle" fill="#e6edf3" font-size="14">−</text>
+<rect x="862" y="150" width="46" height="24" rx="6" fill="#30363d"/><text x="885" y="166" text-anchor="middle" fill="#e6edf3" font-size="11">OK</text>
+<rect x="914" y="150" width="40" height="24" rx="6" fill="#30363d"/><text x="934" y="167" text-anchor="middle" fill="#e6edf3" font-size="14">+</text>
+<text class="s" x="816" y="194">admin guruhni belgilaydi</text>
+</g>
+
+<!-- test + level scale -->
+<text class="n" x="345" y="278">2 · TEST</text>
+<text class="s" x="410" y="278">40 ta quiz-savol, birma-bir</text>
+<text class="n" x="880" y="278">3 · DARAJA</text>
+<rect class="box" x="345" y="300" width="232.5" height="34" rx="8"/>
+<rect class="box a2" x="577.5" y="300" width="310" height="34" rx="8"/>
+<rect class="box" x="887.5" y="300" width="77.5" height="34" rx="8"/>
+<text class="t" x="461" y="322" text-anchor="middle" font-size="12">A1 · Beginner</text>
+<text class="t" x="732" y="322" text-anchor="middle" font-size="12">A2 · Elementary</text>
+<text class="t" x="926" y="322" text-anchor="middle" font-size="12">B1</text>
+<g class="s" text-anchor="middle"><text x="345" y="352">0</text><text x="577" y="352">15</text><text x="887" y="352">35</text><text x="965" y="352">40</text></g>
+<text class="s" x="345" y="374">to'g'ri javoblar soni → daraja</text>
+<path class="mark" d="M339 286h12l-6 10z" fill="#58a6ff"/>
+
+<text x="345" y="410" fill="#3fb950" font-size="11" font-weight="700" letter-spacing="1">KECHAYU KUNDUZ · natija darhol chiqadi</text>
+
+<!-- moving packets -->
+<circle r="5" class="dot"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" path="M290 143H360" keyPoints="0;0;1;1" keyTimes="0;.12;.18;1"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.12;.13;.17;.18;1"/></circle>
+<circle r="5" class="dot"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" path="M440 143H560" keyPoints="0;0;1;1" keyTimes="0;.20;.26;1"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.20;.21;.25;.26;1"/></circle>
+<circle r="5" class="dot"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" path="M290 317H345" keyPoints="0;0;1;1" keyTimes="0;.47;.52;1"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.47;.48;.51;.52;1"/></circle>
+</svg>
